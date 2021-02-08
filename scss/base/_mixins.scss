@@ -1,0 +1,19 @@
+@mixin botonNavegador {
+  font-family: "ubuntu";
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 50%;
+  margin-right: 50%;
+  border-radius: 100px;
+  transform: translate(-50%,-50%);
+  padding: 5px 35px 5px 35px;
+  background-color: #ff5c5c;
+  border-width: 3px;
+  border-color: #f2a22c;
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}

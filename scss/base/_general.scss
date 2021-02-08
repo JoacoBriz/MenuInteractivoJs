@@ -6,9 +6,8 @@ html{
 }
 
 header{
+  margin-top: 60px;
     img.logo{
-      margin-top: 20px;
-      margin-bottom: 5px;
       width: 230px;
       display: block;
       margin-left: auto;
@@ -18,11 +17,12 @@ header{
       font-family: 'Merriweather', serif;
       font-size: 55px;
       text-align: center;
+      font-weight: 700;
     }
     h2{
       font-size: 25px;
       font-family: 'Merriweather', serif;
-      font-weight: 500;
+      font-weight: 700;
       text-align: center;
     }
     margin-bottom: 65px;
