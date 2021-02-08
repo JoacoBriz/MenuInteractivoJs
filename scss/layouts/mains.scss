@@ -8,6 +8,22 @@
 
 //Desayuno - Comida/Bebida/Postre
 .desayuno {
+  .tituloSeccion{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  hr {
+    height: 10px;
+    width: 50%;
+    background-color: #ff5c5c;
+    color: #ff5c5c;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
   .productoDesayuno{
     display: flex;
     flex-direction: column;
@@ -30,7 +46,7 @@
     .imagenProducto{
       filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
       border-radius: 20px;
-      width: 250px;
+      width: 80%;
       height: 180px;
       margin-left: auto;
       margin-right: auto;
@@ -66,15 +82,26 @@
     }
 
     .buttonOrder{
-      font-weight: 600;
-      text-align: center;
-      width: 50%;
-      margin-top: 10px;
-      @include botonNavegador;
-      transition: 1s;
-      color: #ff5c5c;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      font-family: "ubuntu";
+      display: flex;
+      justify-content: center;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 50%;
+      margin-right: 30%;
+      border-radius: 100px;
+      transform: translate(-50%,-50%);
+      padding: 5px 65px 5px 65px;
       background-color: white;
-      margin-bottom: 0px;
+      border-width: 3px;
+      border-color: #f2a22c;
+      color:#ff5c5c;
+      font-weight: 600;
+      a{
+        text-decoration: none;
+        color: #ff5c5c;
+      }
     }
 
     .buttonOrder:hover{
@@ -85,7 +112,316 @@
 }
 
 //Almuerzo - Comida/Bebida/Postre
+.almuerzo {
+  .tituloSeccion{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  hr {
+    height: 10px;
+    width: 50%;
+    background-color: #ff5c5c;
+    color: #ff5c5c;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .productoAlmuerzo{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    margin-bottom: 80px;
+    padding-top: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f2a22c;
+    background-color: #ff5c5c;
+    color: white;
+
+    .imagenProducto{
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      border-radius: 20px;
+      width: 80%;
+      height: 180px;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: solid;
+      border-width: 3px;
+      border-color: #f2a22c;
+    }
+
+    .nombreProducto{
+      font-weight: 600;
+      float: left;
+      font-size: 28px;
+      margin-top: 25px;
+      margin-left: 10%;
+      padding-bottom: 5px;
+    }
+
+    .precioProducto{
+      font-weight: 600;
+      font-size: 24px;
+      margin-left: 10%;
+      float: right;
+      padding-bottom: 5px;
+    }
+
+    .descripcionProducto{
+      font-weight: 300;
+      font-size: 18px;
+      text-align: left;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding-bottom: 25px;
+    }
+
+    .buttonOrder{
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      font-family: "ubuntu";
+      display: flex;
+      justify-content: center;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 50%;
+      margin-right: 30%;
+      border-radius: 100px;
+      transform: translate(-50%,-50%);
+      padding: 5px 65px 5px 65px;
+      background-color: white;
+      border-width: 3px;
+      border-color: #f2a22c;
+      color:#ff5c5c;
+      font-weight: 600;
+      a{
+        text-decoration: none;
+        color: #ff5c5c;
+      }
+    }
+
+    .buttonOrder:hover{
+      background-color: white;
+      color: #ff5c5c;
+    }
+  }
+}
 
 //Merienda - Comida/Bebida/Postre
+.merienda {
+  .tituloSeccion{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  hr {
+    height: 10px;
+    width: 50%;
+    background-color: #ff5c5c;
+    color: #ff5c5c;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .productoMerienda{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    margin-bottom: 80px;
+    padding-top: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f2a22c;
+    background-color: #ff5c5c;
+    color: white;
+
+    .imagenProducto{
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      border-radius: 20px;
+      width: 80%;
+      height: 180px;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: solid;
+      border-width: 3px;
+      border-color: #f2a22c;
+    }
+
+    .nombreProducto{
+      font-weight: 600;
+      float: left;
+      font-size: 28px;
+      margin-top: 25px;
+      margin-left: 10%;
+      padding-bottom: 5px;
+    }
+
+    .precioProducto{
+      font-weight: 600;
+      font-size: 24px;
+      margin-left: 10%;
+      float: right;
+      padding-bottom: 5px;
+    }
+
+    .descripcionProducto{
+      font-weight: 300;
+      font-size: 18px;
+      text-align: left;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding-bottom: 25px;
+    }
+
+    .buttonOrder{
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      font-family: "ubuntu";
+      display: flex;
+      justify-content: center;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 50%;
+      margin-right: 30%;
+      border-radius: 100px;
+      transform: translate(-50%,-50%);
+      padding: 5px 65px 5px 65px;
+      background-color: white;
+      border-width: 3px;
+      border-color: #f2a22c;
+      color:#ff5c5c;
+      font-weight: 600;
+      a{
+        text-decoration: none;
+        color: #ff5c5c;
+      }
+    }
+
+    .buttonOrder:hover{
+      background-color: white;
+      color: #ff5c5c;
+    }
+  }
+}
 
 //Cena - Comida/Bebida/Postre
+.cena {
+  .tituloSeccion{
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  hr {
+    height: 10px;
+    width: 50%;
+    background-color: #ff5c5c;
+    color: #ff5c5c;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .productoCena{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    margin-bottom: 80px;
+    padding-top: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f2a22c;
+    background-color: #ff5c5c;
+    color: white;
+
+    .imagenProducto{
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      border-radius: 20px;
+      width: 80%;
+      height: 180px;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: solid;
+      border-width: 3px;
+      border-color: #f2a22c;
+    }
+
+    .nombreProducto{
+      font-weight: 600;
+      float: left;
+      font-size: 28px;
+      margin-top: 25px;
+      margin-left: 10%;
+      padding-bottom: 5px;
+    }
+
+    .precioProducto{
+      font-weight: 600;
+      font-size: 24px;
+      margin-left: 10%;
+      float: right;
+      padding-bottom: 5px;
+    }
+
+    .descripcionProducto{
+      font-weight: 300;
+      font-size: 18px;
+      text-align: left;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding-bottom: 25px;
+    }
+
+    .buttonOrder{
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      font-family: "ubuntu";
+      display: flex;
+      justify-content: center;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 50%;
+      margin-right: 30%;
+      border-radius: 100px;
+      transform: translate(-50%,-50%);
+      padding: 5px 65px 5px 65px;
+      background-color: white;
+      border-width: 3px;
+      border-color: #f2a22c;
+      color:#ff5c5c;
+      font-weight: 600;
+      a{
+        text-decoration: none;
+        color: #ff5c5c;
+      }
+    }
+
+    .buttonOrder:hover{
+      background-color: white;
+      color: #ff5c5c;
+    }
+  }
+}
