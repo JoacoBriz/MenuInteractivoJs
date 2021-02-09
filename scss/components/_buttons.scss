@@ -13,9 +13,37 @@
   z-index: 10000;
   text-decoration: none;
   color: #fff;
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
 }
 
 .whatsapp-button:hover {
+  animation: pulse 1s;
+  outline: none;
+  text-decoration: none;
+}
+
+
+
+.instagram-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+  font-size: 30px;
+  height: 60px;
+  width: 60px;
+  float: right;
+  left: 84%;
+  position: fixed;
+  bottom: 20px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+}
+
+.instagram-button:hover {
   animation: pulse 1s;
   outline: none;
   text-decoration: none;

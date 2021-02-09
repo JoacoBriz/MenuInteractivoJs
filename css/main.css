@@ -32,7 +32,8 @@ header {
     padding: 5px 25px 5px 25px;
     background-color: #ff5c5c;
     border-width: 3px;
-    border-color: #f2a22c; }
+    border-color: #f2a22c;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25); }
     header .buttonClases a {
       display: flex;
       flex-direction: row;
@@ -54,9 +55,33 @@ header {
   border-radius: 50%;
   z-index: 10000;
   text-decoration: none;
-  color: #fff; }
+  color: #fff;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25); }
 
 .whatsapp-button:hover {
+  animation: pulse 1s;
+  outline: none;
+  text-decoration: none; }
+
+.instagram-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+  font-size: 30px;
+  height: 60px;
+  width: 60px;
+  float: right;
+  left: 84%;
+  position: fixed;
+  bottom: 20px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff; }
+
+.instagram-button:hover {
   animation: pulse 1s;
   outline: none;
   text-decoration: none; }
@@ -74,7 +99,8 @@ header {
   padding: 5px 35px 5px 35px;
   background-color: #ff5c5c;
   border-width: 3px;
-  border-color: #f2a22c; }
+  border-color: #f2a22c;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25); }
   .mainPrincipal .buttonTipo a {
     text-decoration: none;
     color: white; }
@@ -87,13 +113,13 @@ header {
   letter-spacing: 2px; }
 
 .desayuno hr {
-  height: 10px;
+  height: 12px;
   width: 50%;
   background-color: #ff5c5c;
-  color: #ff5c5c;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  border-radius: 100px; }
 
 .desayuno .productoDesayuno {
   display: flex;
