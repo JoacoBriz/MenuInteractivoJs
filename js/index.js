@@ -7,10 +7,10 @@ function saludo() {
 }
 saludo()
 
+
+// showProductos(productosGlobal);
 //Inicialización//
 let buttonOrdenarList = document.getElementsByClassName("buttonOrden");
-
-showProductos(productosGlobal);
 
 for (var i = 0; i > buttonOrdenarList.length; i++) {
   const element = buttonOrdenarList[i];
