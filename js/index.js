@@ -10,18 +10,34 @@
 
 // showProductos(productosGlobal);
 //Inicialización//
-let buttonOrdenarList = document.getElementsByClassName("buttonOrden");
+// let buttonOrdenarList = document.getElementsByClassName("buttonOrden");
 
-for (var i = 0; i > buttonOrdenarList.length; i++) {
-  const element = buttonOrdenarList[i];
-  element.addEventListener("click", ordenarPlato);
-}
+// for (var i = 0; i > buttonOrdenarList.length; i++) {
+//   const element = buttonOrdenarList[i];
+//   element.addEventListener("click", ordenarPlato);
+// }
 
-function ordenarPlato (agregarPlato)  {
-  var buttonOrden = agregarPlato.target;
-  buttonOrden.style.visivility = "hidden";
-  alert("Has ordenado un producto!")
-}
+// function ordenarPlato (agregarPlato)  {
+//   var buttonOrden = agregarPlato.target;
+//   buttonOrden.style.visivility = "hidden";
+//   alert("Has ordenado un producto!")
+// }
+
+$( document ).ready(function () {
+  $(".buttonOrder").click(function() {
+    $(this).hide();
+    alert("Has ordenado un Producto!");
+    $(".buttonCancel").show();
+  })
+  $(".buttonCancel").click(function() {
+    $(this).hide();
+    alert("Has cancelado la orden");
+    $(".buttonOrder").show();
+  })
+})
+
+
+
 
 
 

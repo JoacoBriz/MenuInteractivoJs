@@ -65,6 +65,8 @@ header {
 
 .instagram-button {
   display: flex;
+  outline: none;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
   background: #d6249f;
@@ -78,7 +80,7 @@ header {
   right: 10px;
   bottom: 20px;
   border-radius: 50%;
-  text-decoration: none;
+  z-index: 10000;
   color: #fff; }
 
 .instagram-button:hover {
@@ -174,22 +176,39 @@ header {
     font-family: "ubuntu";
     display: flex;
     justify-content: center;
+    text-align: center;
     font-size: 25px;
     margin-top: 20px;
     margin-left: 50%;
-    margin-right: 30%;
     border-radius: 100px;
     transform: translate(-50%, -50%);
-    padding: 5px 65px 5px 65px;
+    padding: 5px 10px 5px 10px;
     background-color: white;
     border-width: 3px;
     border-color: #f2a22c;
     color: #ff5c5c;
     font-weight: 600; }
-    .desayuno .productoDesayuno .buttonOrder a {
-      text-decoration: none;
-      color: #ff5c5c; }
   .desayuno .productoDesayuno .buttonOrder:hover {
+    background-color: white;
+    color: #ff5c5c; }
+  .desayuno .productoDesayuno .buttonCancel {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    font-family: "ubuntu";
+    display: none;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 50%;
+    border-radius: 100px;
+    transform: translate(-50%, -50%);
+    padding: 5px 10px 5px 10px;
+    background-color: white;
+    border-width: 3px;
+    border-color: #f2a22c;
+    color: #ff5c5c;
+    font-weight: 600; }
+  .desayuno .productoDesayuno .buttonCancel:hover {
     background-color: white;
     color: #ff5c5c; }
 
@@ -280,6 +299,24 @@ header {
   .almuerzo .productoAlmuerzo .buttonOrder:hover {
     background-color: white;
     color: #ff5c5c; }
+  .almuerzo .productoAlmuerzo .buttonCancel {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    font-family: "ubuntu";
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    font-size: 25px;
+    margin-top: 460px;
+    margin-left: 50%;
+    margin-right: 30%;
+    border-radius: 100px;
+    transform: translate(-50%, -50%);
+    padding: 5px 20px 5px 20px;
+    background-color: white;
+    border-width: 3px;
+    border-color: #f2a22c;
+    color: #ff5c5c;
+    font-weight: 600; }
 
 .merienda .tituloSeccion {
   font-family: 'Merriweather', serif;
@@ -368,6 +405,24 @@ header {
   .merienda .productoMerienda .buttonOrder:hover {
     background-color: white;
     color: #ff5c5c; }
+  .merienda .productoMerienda .buttonCancel {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    font-family: "ubuntu";
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    font-size: 25px;
+    margin-top: 460px;
+    margin-left: 50%;
+    margin-right: 30%;
+    border-radius: 100px;
+    transform: translate(-50%, -50%);
+    padding: 5px 20px 5px 20px;
+    background-color: white;
+    border-width: 3px;
+    border-color: #f2a22c;
+    color: #ff5c5c;
+    font-weight: 600; }
 
 .cena .tituloSeccion {
   font-family: 'Merriweather', serif;
@@ -456,3 +511,21 @@ header {
   .cena .productoCena .buttonOrder:hover {
     background-color: white;
     color: #ff5c5c; }
+  .cena .productoCena .buttonCancel {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    font-family: "ubuntu";
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    font-size: 25px;
+    margin-top: 460px;
+    margin-left: 50%;
+    margin-right: 30%;
+    border-radius: 100px;
+    transform: translate(-50%, -50%);
+    padding: 5px 20px 5px 20px;
+    background-color: white;
+    border-width: 3px;
+    border-color: #f2a22c;
+    color: #ff5c5c;
+    font-weight: 600; }

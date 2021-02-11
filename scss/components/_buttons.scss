@@ -26,6 +26,8 @@
 
 .instagram-button {
   display: flex;
+  outline: none;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
   background: #d6249f;
@@ -39,7 +41,7 @@
   right: 10px;
   bottom: 20px;
   border-radius: 50%;
-  text-decoration: none;
+  z-index: 10000;
   color: #fff;
 }
 
