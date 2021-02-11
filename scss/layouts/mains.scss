@@ -108,7 +108,7 @@
     .buttonCancel{
       filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
       font-family: "ubuntu";
-      display: none;
+      display: flex;
       justify-content: center;
       text-align: center;
       font-size: 25px;
@@ -362,7 +362,7 @@
     .buttonCancel{
       filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
       font-family: "ubuntu";
-      display: flex;
+      display: none;
       justify-content: center;
       position:fixed;
       font-size: 25px;
