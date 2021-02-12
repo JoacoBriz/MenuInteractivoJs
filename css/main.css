@@ -194,7 +194,7 @@ header {
   .desayuno .productoDesayuno .buttonCancel {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     font-family: "ubuntu";
-    display: none;
+    display: flex;
     justify-content: center;
     text-align: center;
     font-size: 25px;
@@ -210,6 +210,27 @@ header {
     font-weight: 600; }
   .desayuno .productoDesayuno .buttonCancel:hover {
     background-color: white;
+    color: #ff5c5c; }
+
+.desayuno .buttonFinal {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+  font-family: "ubuntu";
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 50%;
+  margin-right: 30%;
+  border-radius: 100px;
+  transform: translate(-50%, -50%);
+  padding: 5px 65px 5px 65px;
+  background-color: white;
+  border-width: 3px;
+  border-color: #f2a22c;
+  color: #ff5c5c;
+  font-weight: 600; }
+  .desayuno .buttonFinal a {
+    text-decoration: none;
     color: #ff5c5c; }
 
 .almuerzo .tituloSeccion {
@@ -408,7 +429,7 @@ header {
   .merienda .productoMerienda .buttonCancel {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     font-family: "ubuntu";
-    display: flex;
+    display: none;
     justify-content: center;
     position: fixed;
     font-size: 25px;
