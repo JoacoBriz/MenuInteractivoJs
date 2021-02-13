@@ -107,14 +107,14 @@ header {
     text-decoration: none;
     color: white; }
 
-.desayuno .tituloSeccion {
+.menuGlobal .tituloSeccion {
   font-family: 'Merriweather', serif;
   text-align: center;
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 2px; }
 
-.desayuno hr {
+.menuGlobal hr {
   height: 12px;
   width: 50%;
   background-color: #ff5c5c;
@@ -123,7 +123,7 @@ header {
   margin-bottom: 20px;
   border-radius: 100px; }
 
-.desayuno .productoDesayuno {
+.menuGlobal .productoGlobal {
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -141,7 +141,7 @@ header {
   border-color: #f2a22c;
   background-color: #ff5c5c;
   color: white; }
-  .desayuno .productoDesayuno .imagenProducto {
+  .menuGlobal .productoGlobal .imagenProducto {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     border-radius: 20px;
     width: 80%;
@@ -151,27 +151,27 @@ header {
     border-style: solid;
     border-width: 3px;
     border-color: #f2a22c; }
-  .desayuno .productoDesayuno .nombreProducto {
+  .menuGlobal .productoGlobal .nombreProducto {
     font-weight: 600;
     float: left;
     font-size: 28px;
     margin-top: 25px;
     margin-left: 10%;
     padding-bottom: 5px; }
-  .desayuno .productoDesayuno .precioProducto {
+  .menuGlobal .productoGlobal .precioProducto {
     font-weight: 600;
     font-size: 24px;
     margin-left: 10%;
     float: right;
     padding-bottom: 5px; }
-  .desayuno .productoDesayuno .descripcionProducto {
+  .menuGlobal .productoGlobal .descripcionProducto {
     font-weight: 300;
     font-size: 18px;
     text-align: left;
     margin-left: 10%;
     margin-right: 10%;
     padding-bottom: 25px; }
-  .desayuno .productoDesayuno .buttonOrder {
+  .menuGlobal .productoGlobal .buttonOrder {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     font-family: "ubuntu";
     display: flex;
@@ -188,10 +188,10 @@ header {
     border-color: #f2a22c;
     color: #ff5c5c;
     font-weight: 600; }
-  .desayuno .productoDesayuno .buttonOrder:hover {
+  .menuGlobal .productoGlobal .buttonOrder:hover {
     background-color: white;
     color: #ff5c5c; }
-  .desayuno .productoDesayuno .buttonCancel {
+  .menuGlobal .productoGlobal .buttonCancel {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     font-family: "ubuntu";
     display: flex;
@@ -208,345 +208,27 @@ header {
     border-color: #f2a22c;
     color: #ff5c5c;
     font-weight: 600; }
-  .desayuno .productoDesayuno .buttonCancel:hover {
+  .menuGlobal .productoGlobal .buttonCancel:hover {
     background-color: white;
     color: #ff5c5c; }
 
-.desayuno .buttonFinal {
+.menuGlobal .buttonFinal {
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
   font-family: "ubuntu";
   display: flex;
   justify-content: center;
   font-size: 25px;
   margin-top: 20px;
-  margin-left: 50%;
+  margin-left: 55%;
   margin-right: 30%;
   border-radius: 100px;
   transform: translate(-50%, -50%);
-  padding: 5px 65px 5px 65px;
+  padding: 5px 35px 5px 35px;
   background-color: white;
   border-width: 3px;
   border-color: #f2a22c;
   color: #ff5c5c;
   font-weight: 600; }
-  .desayuno .buttonFinal a {
+  .menuGlobal .buttonFinal a {
     text-decoration: none;
     color: #ff5c5c; }
-
-.almuerzo .tituloSeccion {
-  font-family: 'Merriweather', serif;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 2px; }
-
-.almuerzo hr {
-  height: 10px;
-  width: 50%;
-  background-color: #ff5c5c;
-  color: #ff5c5c;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px; }
-
-.almuerzo .productoAlmuerzo {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  margin-bottom: 80px;
-  padding-top: 30px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 40px;
-  background-color: white;
-  color: black;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #f2a22c;
-  background-color: #ff5c5c;
-  color: white; }
-  .almuerzo .productoAlmuerzo .imagenProducto {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    border-radius: 20px;
-    width: 80%;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #f2a22c; }
-  .almuerzo .productoAlmuerzo .nombreProducto {
-    font-weight: 600;
-    float: left;
-    font-size: 28px;
-    margin-top: 25px;
-    margin-left: 10%;
-    padding-bottom: 5px; }
-  .almuerzo .productoAlmuerzo .precioProducto {
-    font-weight: 600;
-    font-size: 24px;
-    margin-left: 10%;
-    float: right;
-    padding-bottom: 5px; }
-  .almuerzo .productoAlmuerzo .descripcionProducto {
-    font-weight: 300;
-    font-size: 18px;
-    text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 25px; }
-  .almuerzo .productoAlmuerzo .buttonOrder {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    font-family: "ubuntu";
-    display: flex;
-    justify-content: center;
-    font-size: 25px;
-    margin-top: 20px;
-    margin-left: 50%;
-    margin-right: 30%;
-    border-radius: 100px;
-    transform: translate(-50%, -50%);
-    padding: 5px 65px 5px 65px;
-    background-color: white;
-    border-width: 3px;
-    border-color: #f2a22c;
-    color: #ff5c5c;
-    font-weight: 600; }
-    .almuerzo .productoAlmuerzo .buttonOrder a {
-      text-decoration: none;
-      color: #ff5c5c; }
-  .almuerzo .productoAlmuerzo .buttonOrder:hover {
-    background-color: white;
-    color: #ff5c5c; }
-  .almuerzo .productoAlmuerzo .buttonCancel {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    font-family: "ubuntu";
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    font-size: 25px;
-    margin-top: 460px;
-    margin-left: 50%;
-    margin-right: 30%;
-    border-radius: 100px;
-    transform: translate(-50%, -50%);
-    padding: 5px 20px 5px 20px;
-    background-color: white;
-    border-width: 3px;
-    border-color: #f2a22c;
-    color: #ff5c5c;
-    font-weight: 600; }
-
-.merienda .tituloSeccion {
-  font-family: 'Merriweather', serif;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 2px; }
-
-.merienda hr {
-  height: 10px;
-  width: 50%;
-  background-color: #ff5c5c;
-  color: #ff5c5c;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px; }
-
-.merienda .productoMerienda {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  margin-bottom: 80px;
-  padding-top: 30px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 40px;
-  background-color: white;
-  color: black;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #f2a22c;
-  background-color: #ff5c5c;
-  color: white; }
-  .merienda .productoMerienda .imagenProducto {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    border-radius: 20px;
-    width: 80%;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #f2a22c; }
-  .merienda .productoMerienda .nombreProducto {
-    font-weight: 600;
-    float: left;
-    font-size: 28px;
-    margin-top: 25px;
-    margin-left: 10%;
-    padding-bottom: 5px; }
-  .merienda .productoMerienda .precioProducto {
-    font-weight: 600;
-    font-size: 24px;
-    margin-left: 10%;
-    float: right;
-    padding-bottom: 5px; }
-  .merienda .productoMerienda .descripcionProducto {
-    font-weight: 300;
-    font-size: 18px;
-    text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 25px; }
-  .merienda .productoMerienda .buttonOrder {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    font-family: "ubuntu";
-    display: flex;
-    justify-content: center;
-    font-size: 25px;
-    margin-top: 20px;
-    margin-left: 50%;
-    margin-right: 30%;
-    border-radius: 100px;
-    transform: translate(-50%, -50%);
-    padding: 5px 65px 5px 65px;
-    background-color: white;
-    border-width: 3px;
-    border-color: #f2a22c;
-    color: #ff5c5c;
-    font-weight: 600; }
-    .merienda .productoMerienda .buttonOrder a {
-      text-decoration: none;
-      color: #ff5c5c; }
-  .merienda .productoMerienda .buttonOrder:hover {
-    background-color: white;
-    color: #ff5c5c; }
-  .merienda .productoMerienda .buttonCancel {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    font-family: "ubuntu";
-    display: none;
-    justify-content: center;
-    position: fixed;
-    font-size: 25px;
-    margin-top: 460px;
-    margin-left: 50%;
-    margin-right: 30%;
-    border-radius: 100px;
-    transform: translate(-50%, -50%);
-    padding: 5px 20px 5px 20px;
-    background-color: white;
-    border-width: 3px;
-    border-color: #f2a22c;
-    color: #ff5c5c;
-    font-weight: 600; }
-
-.cena .tituloSeccion {
-  font-family: 'Merriweather', serif;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 700;
-  letter-spacing: 2px; }
-
-.cena hr {
-  height: 10px;
-  width: 50%;
-  background-color: #ff5c5c;
-  color: #ff5c5c;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px; }
-
-.cena .productoCena {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  margin-bottom: 80px;
-  padding-top: 30px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 40px;
-  background-color: white;
-  color: black;
-  border-style: solid;
-  border-width: 3px;
-  border-color: #f2a22c;
-  background-color: #ff5c5c;
-  color: white; }
-  .cena .productoCena .imagenProducto {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    border-radius: 20px;
-    width: 80%;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: solid;
-    border-width: 3px;
-    border-color: #f2a22c; }
-  .cena .productoCena .nombreProducto {
-    font-weight: 600;
-    float: left;
-    font-size: 28px;
-    margin-top: 25px;
-    margin-left: 10%;
-    padding-bottom: 5px; }
-  .cena .productoCena .precioProducto {
-    font-weight: 600;
-    font-size: 24px;
-    margin-left: 10%;
-    float: right;
-    padding-bottom: 5px; }
-  .cena .productoCena .descripcionProducto {
-    font-weight: 300;
-    font-size: 18px;
-    text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-bottom: 25px; }
-  .cena .productoCena .buttonOrder {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    font-family: "ubuntu";
-    display: flex;
-    justify-content: center;
-    font-size: 25px;
-    margin-top: 20px;
-    margin-left: 50%;
-    margin-right: 30%;
-    border-radius: 100px;
-    transform: translate(-50%, -50%);
-    padding: 5px 65px 5px 65px;
-    background-color: white;
-    border-width: 3px;
-    border-color: #f2a22c;
-    color: #ff5c5c;
-    font-weight: 600; }
-    .cena .productoCena .buttonOrder a {
-      text-decoration: none;
-      color: #ff5c5c; }
-  .cena .productoCena .buttonOrder:hover {
-    background-color: white;
-    color: #ff5c5c; }
-  .cena .productoCena .buttonCancel {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-    font-family: "ubuntu";
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    font-size: 25px;
-    margin-top: 460px;
-    margin-left: 50%;
-    margin-right: 30%;
-    border-radius: 100px;
-    transform: translate(-50%, -50%);
-    padding: 5px 20px 5px 20px;
-    background-color: white;
-    border-width: 3px;
-    border-color: #f2a22c;
-    color: #ff5c5c;
-    font-weight: 600; }
