@@ -16,8 +16,10 @@ const agregarAlCarritoBotones = document.querySelectorAll(".buttonOrder");
 agregarAlCarritoBotones.forEach(agregarAlCarritoBoton => {
   if (agregarAlCarritoBoton.innerHTML === "Ordenar") {
     agregarAlCarritoBoton.addEventListener("click", agregarAlCarritoClick);
+    console.log("Entre a ordenar");
   } else if (agregarAlCarritoBoton.innerHTML === "Cancelar") {
     agregarAlCarritoBoton.addEventListener("click", quitarProductoDelCarritoClick);
+    console.log("Entre a cancelar");
   }
 })
 
@@ -35,7 +37,7 @@ function agregarAlCarritoClick (event) {
 
 function agregarProductoAlCarrito (productoNombre,productoPrecio) {
   confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
-  mostrarPrecioEnConsola();
+  // mostrarPrecioEnConsola();
 }
 
 
@@ -64,12 +66,12 @@ function quitarDelCarrito (nombreProducto) {
 
 
 //Obtener Precio final (no funciona aún)
-function mostrarPrecioEnConsola () {
-  let total = 0;
-  const productosDelCarrito = document.querySelectorAll(".productoGlobal");
+// function mostrarPrecioEnConsola () {
+//   let total = 0;
+//   const productosDelCarrito = document.querySelectorAll(".productoGlobal");
 
-  productosDelCarrito.forEach(productoDelCarrito => {
-    const precioProductoDelCarrito = productoDelCarrito.querySelector(".precioProducto").textContent;
-    console.log(precioProductoDelCarrito);
-  })
-}
+//   productosDelCarrito.forEach(productoDelCarrito => {
+//     const precioProductoDelCarrito = productoDelCarrito.querySelector(".precioProducto").textContent;
+//     console.log(precioProductoDelCarrito);
+//   })
+// }
