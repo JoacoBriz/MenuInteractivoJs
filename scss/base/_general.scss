@@ -8,7 +8,7 @@ html{
 header{
   margin-top: 30px;
     img.logo{
-      width: 230px;
+      width: 260px;
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -17,7 +17,7 @@ header{
       font-family: 'Merriweather', serif;
       font-size: 55px;
       text-align: center;
-      font-weight: 700;
+      font-weight: 800;
     }
     h2{
       font-size: 25px;
@@ -27,24 +27,35 @@ header{
       margin-bottom: 35px;
     }
 
-    .buttonClases{
-      margin-left: 1.5%;
-      font-weight: 600;
-      font-family: "ubuntu";
-      font-size: 20px;
-      border-radius: 100px;
-      padding: 5px 25px 5px 25px;
-      background-color: #ff5c5c;
-      border-width: 3px;
-      border-color: #f2a22c;
-      box-shadow: 0px 3px 10px rgba(0,0,0,.25);
-      a{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+    div{
+      display: flex;
+      justify-content: space-around;
+      .buttonClases{
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-family: "ubuntu";
+        font-size: 18px;
+        border-radius: 100px;
+        padding: 5px 25px 5px 25px;
+        background-color: #ff5c5c;
+        border-width: 3px;
+        border-color: #f2a22c;
+        box-shadow: 0px 3px 10px rgba(0,0,0,.25);
         text-decoration: none;
-        color: white;
+        a{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          text-decoration: none;
+          color: white;
+        }
+      }
+      .buttonClases:hover{
+        background-color: white;
+        color: #ff5c5c;
+        border-color: #f2a22c;
       }
     }
+
     margin-bottom: 50px;
 }

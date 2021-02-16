@@ -2,8 +2,28 @@
 
 .mainPrincipal {
   .buttonTipo{
-    @include botonNavegador;
+    font-family: "ubuntu";
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 50%;
+    margin-right: 50%;
+    border-radius: 100px;
+    transform: translate(-50%,-50%);
+    padding: 5px 35px 5px 35px;
+    background-color: #ff5c5c;
+    border-width: 3px;
+    border-color: #f2a22c;
+    box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+    a{
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
   }
+
 }
 
 //Main de comidas GLOBAL
@@ -132,12 +152,11 @@
   .buttonFinal{
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     font-family: "ubuntu";
-    display: flex;
-    justify-content: center;
+    display: block;
+    margin-left: 50%;
+    margin-right: 50%;
     font-size: 25px;
     margin-top: 20px;
-    margin-left: 55%;
-    margin-right: 30%;
     border-radius: 100px;
     transform: translate(-50%,-50%);
     padding: 5px 35px 5px 35px;
@@ -149,6 +168,14 @@
     a{
       text-decoration: none;
       color: #ff5c5c;
+    }
+  }
+  .buttonFinal:active {
+    background-color: white;
+    border-width: 4px;
+    a{
+      color: #ff5c5c;
+      font-weight: 600;
     }
   }
 }

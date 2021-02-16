@@ -1,45 +1,75 @@
-
-//Cambio de Boton
-window.onload = function () {
-  const buttons = document.querySelectorAll(".buttonOrder");
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      if (btn.innerHTML === "Ordenar") {
-        btn.innerHTML = "Cancelar";
-      }});
-  });
-};
-
+//Cambio de Boton con jQuery
+$(document).ready( function () {
+  $(".buttonOrder").click(function () {
+    if (this.innerHTML === "Ordenar") {
+      this.innerHTML = "Cancelar";
+    } else {
+      this.innerHTML = "Ordenar";
+    }
+  })
+})
 
 
 
 //Carrito de compras
-const addToShoppingCardButtons = document.querySelectorAll(".buttonOrder");
-addToShoppingCardButtons.forEach(addToCardButton => {
-  addToCardButton.addEventListener("click", addToCardClicked);
+const agregarAlCarritoBotones = document.querySelectorAll(".buttonOrder");
+agregarAlCarritoBotones.forEach(agregarAlCarritoBoton => {
+  if (agregarAlCarritoBoton.innerHTML === "Ordenar") {
+    agregarAlCarritoBoton.addEventListener("click", agregarAlCarritoClick);
+  } else if (agregarAlCarritoBoton.innerHTML === "Cancelar") {
+    agregarAlCarritoBoton.addEventListener("click", quitarProductoDelCarritoClick);
+  }
 })
 
-const shoppingCardItemsContainer =document.querySelector(".menuGlobal");
+//Agregar productos al carrito (funciona)
 
-//Agregar productos al carrito
-function addToCardClicked (event) {
+function agregarAlCarritoClick (event) {
   const button =event.target;
   const item = button.closest(".productoGlobal");
   
+  const productoNombre = item.querySelector(".nombreProducto").textContent;
+  const productoPrecio = item.querySelector(".precioProducto").textContent;
+
+  agregarProductoAlCarrito(productoNombre,productoPrecio);
+}
+
+function agregarProductoAlCarrito (productoNombre,productoPrecio) {
+  confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
+  mostrarPrecioEnConsola();
+}
+
+
+
+
+
+
+// Quitar productos al carrito (No me funciona aún)
+
+function quitarProductoDelCarritoClick (event) {
+  const button =event.target;
+  const item = button.closest(".productoGlobal");
   
-  const itemName = item.querySelector(".nombreProducto").textContent;
-  const itemPrice = item.querySelector(".precioProducto").textContent;
+  const nombreProducto = item.querySelector(".nombreProducto").textContent;
 
-  addItemToShoppingCard(itemName,itemPrice);
+  quitarDelCarrito(nombreProducto);
 }
 
-function addItemToShoppingCard (itemName,itemPrice) {
-  alert(`Has ordenado un ${itemName} por ${itemPrice}`);
-
-  searchFinalPrice ()
+function quitarDelCarrito (nombreProducto) {
+  confirm(`Vas a quitar el ${nombreProducto} de tu orden`);
 }
 
-//Obtener Precio final -- No llegue con el tiempo :(
-function searchFinalPrice () {
+
+
+
+
+
+//Obtener Precio final (no funciona aún)
+function mostrarPrecioEnConsola () {
   let total = 0;
+  const productosDelCarrito = document.querySelectorAll(".productoGlobal");
+
+  productosDelCarrito.forEach(productoDelCarrito => {
+    const precioProductoDelCarrito = productoDelCarrito.querySelector(".precioProducto").textContent;
+    console.log(precioProductoDelCarrito);
+  })
 }
