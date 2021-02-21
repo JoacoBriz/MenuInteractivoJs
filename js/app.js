@@ -1,22 +1,26 @@
-//Cambio de Boton con jQuery
+// Cambio de Boton con jQuery
 $(document).ready( function () {
   $(".buttonOrder").click(function (event) {
     if (this.innerHTML === "Ordenar") {
-      agregarAlCarritoClick(event); // Agregar la llamada aca
+      agregarAlCarritoClick(event);
       this.innerHTML = "Cancelar";
     } else {
       this.innerHTML = "Ordenar";
-      quitarProductoDelCarritoClick(event) ; // Agregar la otra llamada aca
+      quitarProductoDelCarritoClick(event) ;
     }
+  })
+
+  $(".buttonFinal").click( function () {
+    alert("Tu orden es: \r" + carrito + "\rPrecio total: ");
   })
 })
 
 
-
 //Carrito de compras
+let carrito = [ ].filter(quitarProducto);
+
 
 //Agregar productos al carrito (funciona)
-
 
 function agregarAlCarritoClick (event) {
   const button =event.target;
@@ -24,21 +28,28 @@ function agregarAlCarritoClick (event) {
   
   const productoNombre = item.querySelector(".nombreProducto").textContent;
   const productoPrecio = item.querySelector(".precioProducto").textContent;
-
+  
   agregarProductoAlCarrito(productoNombre,productoPrecio);
 }
 
 function agregarProductoAlCarrito (productoNombre,productoPrecio) {
   confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
-  mostrarPrecioEnConsola();
-}
+  
+  carrito.push(productoNombre + " de " + productoPrecio);
 
+}
 
 
 
 
 
 // Quitar productos al carrito (Funciona)
+
+function quitarProducto () {
+  if (agregarProductoAlCarritoButtons.innerHTML === "Ordenar") {
+
+  }
+}
 
 function quitarProductoDelCarritoClick (event) {
   const button =event.target;
@@ -50,21 +61,12 @@ function quitarProductoDelCarritoClick (event) {
 }
 
 function quitarDelCarrito (nombreProducto) {
-  confirm(`Vas a quitar el ${nombreProducto} de tu orden`);
+  confirm(`¿Vas a quitar el ${nombreProducto} de tu orden?`);
 }
 
 
 
-
-
-
-//Obtener Precio final (no funciona aún)
-function mostrarPrecioEnConsola () {
+//Mostrar Precio final
+function precioFinal () {
   let total = 0;
-  const productosDelCarrito = document.querySelectorAll(".productoGlobal");
-
-  productosDelCarrito.forEach(productoDelCarrito => {
-    const precioProductoDelCarrito = productoDelCarrito.querySelector(".precioProducto").textContent;
-    console.log(precioProductoDelCarrito);
-  })
 }
