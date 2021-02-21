@@ -11,7 +11,9 @@ $(document).ready( function () {
   })
 
   $(".buttonFinal").click( function () {
-    alert("Tu orden es: \r" + carrito + "\rPrecio total: " + precioFinal);
+    let carritoNames = []
+    carrito.forEach(el => carritoNames.push(el.nombre))
+    alert(`Tu orden es:\r ${carritoNames.join(", ")}\r Precio total: $${precioFinal()}  `);
   })
 })
 
@@ -27,17 +29,19 @@ function agregarAlCarritoClick (event) {
   const item = button.closest(".productoGlobal");
   
   const productoNombre = item.querySelector(".nombreProducto").textContent;
-  const productoPrecio = item.querySelector(".precioProducto").textContent;
+  const productoPrecio = item.querySelector(".precioProducto").textContent; // Este esta devolviendo en texto
   
   agregarProductoAlCarrito(productoNombre,productoPrecio);
 }
 
-function agregarProductoAlCarrito (productoNombre,productoPrecio) {
-  confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
-  
-  carrito.push(productoNombre + " de " + productoPrecio);
-  precioFinal();
+function agregarProductoAlCarrito (productoNombre, productoPrecio) {
+  const confirmation = confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
 
+  if (confirmation) {
+    productoPrecio = parseInt(productoPrecio.slice(1))
+    carrito.push({nombre: productoNombre, precio: productoPrecio});
+    precioFinal();
+  }
 }
 
 
@@ -63,11 +67,7 @@ function quitarDelCarrito (nombreProducto) {
 
 //Mostrar Precio final
 function precioFinal () {
-  let total = 0;
-
-  carrito.forEach( function(carrito) {
-    total += carrito.find(".precioProducto");
-  })
-
-  console.log(total);
+  let total = 0 
+  carrito.forEach(el => total += el.precio);
+  return total
 }
