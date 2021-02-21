@@ -11,13 +11,13 @@ $(document).ready( function () {
   })
 
   $(".buttonFinal").click( function () {
-    alert("Tu orden es: \r" + carrito + "\rPrecio total: ");
+    alert("Tu orden es: \r" + carrito + "\rPrecio total: " + precioFinal);
   })
 })
 
 
 //Carrito de compras
-let carrito = [ ].filter(quitarProducto);
+let carrito = [ ];
 
 
 //Agregar productos al carrito (funciona)
@@ -36,6 +36,7 @@ function agregarProductoAlCarrito (productoNombre,productoPrecio) {
   confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
   
   carrito.push(productoNombre + " de " + productoPrecio);
+  precioFinal();
 
 }
 
@@ -44,12 +45,6 @@ function agregarProductoAlCarrito (productoNombre,productoPrecio) {
 
 
 // Quitar productos al carrito (Funciona)
-
-function quitarProducto () {
-  if (agregarProductoAlCarritoButtons.innerHTML === "Ordenar") {
-
-  }
-}
 
 function quitarProductoDelCarritoClick (event) {
   const button =event.target;
@@ -69,4 +64,10 @@ function quitarDelCarrito (nombreProducto) {
 //Mostrar Precio final
 function precioFinal () {
   let total = 0;
+
+  carrito.forEach( function(carrito) {
+    total += carrito.find(".precioProducto");
+  })
+
+  console.log(total);
 }
