@@ -13,13 +13,33 @@ $(document).ready( function () {
   $(".buttonFinal").click( function () {
     let carritoNames = []
     carrito.forEach(el => carritoNames.push(el.nombre))
-    alert(`Tu orden es:\r ${carritoNames.join(", ")}\r Precio total: $${precioFinal()}  `);
+    Swal.fire({
+      icon: "success",
+      title: `Tu orden es:`,
+      html: `${carritoNames.join("<br/>")} <br/> <br/> Precio total: $${precioFinal()}`,
+      confirmButtonText: "Volver",
+
+
+
+      customClass: {
+        container: "alertCarrito",
+        title: "alertCarritoTitulo",
+        html: "alertCarritoHtml",
+        confirmButton: "alertCarritoButton"
+      }
+    });
+
+
+    while(carrito.length > 0) {
+      carrito.pop();
+    }
   })
 })
 
 
 //Carrito de compras
 let carrito = [ ];
+const buttonOrdenar = document.querySelectorAll(".buttonOrder");
 
 
 //Agregar productos al carrito (funciona)
@@ -35,7 +55,18 @@ function agregarAlCarritoClick (event) {
 }
 
 function agregarProductoAlCarrito (productoNombre, productoPrecio) {
-  const confirmation = confirm(`Has ordenado un ${productoNombre} por ${productoPrecio}`);
+  const confirmation = Swal.fire({
+    icon: "success",
+    title:`Has ordenado un`,
+    html: `${productoNombre} por ${productoPrecio}`,
+    confirmButtonText: "Genial",
+    customClass: {
+      container: "alertAgregarCarrito",
+      title:"alertAgregarCarritoTitle",
+      html: "alertAgregarCarritoTexto",
+      confirmButton: "alertAgregarCarritoButton"
+    }
+  });
 
   if (confirmation) {
     productoPrecio = parseInt(productoPrecio.slice(1))
@@ -60,9 +91,22 @@ function quitarProductoDelCarritoClick (event) {
 }
 
 function quitarDelCarrito (nombreProducto) {
-  confirm(`¿Vas a quitar el ${nombreProducto} de tu orden?`);
+  const confirmation = Swal.fire({
+    icon: "success",
+    title:`Has quitado el`,
+    html: `${productoNombre} por ${productoPrecio} de tu orden`,
+    confirmButtonText: "Volver",
+    customClass: {
+      container: "alertQuitarCarrito",
+      title:"alertQuitarCarritoTitle",
+      html: "alertQuitarCarritoTexto",
+      confirmButton: "alertQuitarCarritoButton"
+    }
+  })
+  if (confirmation) {
+    carrito = carrito.filter(el => el.nombre != nombreProducto);
+  }
 }
-
 
 
 //Mostrar Precio final
@@ -70,4 +114,15 @@ function precioFinal () {
   let total = 0 
   carrito.forEach(el => total += el.precio);
   return total
+}
+
+
+
+//Session storage 
+
+window.sessionStorage.setItem("items", JSON.stringify(carrito));
+var storedArray = JSON.parse(sessionStorage.getItem("items"));//no brackets
+var i;
+for (i = 0; i < storedArray.length; i++) {
+  alert(storedArray[i]);
 }

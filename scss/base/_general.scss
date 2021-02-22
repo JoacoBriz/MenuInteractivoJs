@@ -59,3 +59,62 @@ header{
 
     margin-bottom: 50px;
 }
+
+.alertCarrito{
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  .alertCarritoTitulo{
+    font-family: "ubuntu";
+  }
+  .alertCarritoHtml{
+    font-family: "ubuntu";
+  }
+  .alertCarritoButton{
+    background-color: #ff5c5c;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+.alertAgregarCarrito{
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white;
+  .alertAgregarCarritoTitle{
+    font-family: "ubuntu";
+  }
+  .alertAgregarCarritoTexto{
+    font-family: "ubuntu";
+  }
+  .alertAgregarCarritoButton{
+    border-radius: 30px;
+    background-color: #ff5c5c;
+    font-weight: 500;
+    color: white;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+.alertAgregarQuitar{
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white;
+  .alertQuitarCarritoTitle{
+    font-family: "ubuntu";
+  }
+  .alertQuitarCarritoTexto{
+    font-family: "ubuntu";
+  }
+  .alertQuitarCarritoButton{
+    border-radius: 30px;
+    background-color: #ff5c5c;
+    font-weight: 500;
+    color: white;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}

@@ -49,6 +49,53 @@ header {
       color: #ff5c5c;
       border-color: #f2a22c; }
 
+.alertCarrito {
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px; }
+  .alertCarrito .alertCarritoTitulo {
+    font-family: "ubuntu"; }
+  .alertCarrito .alertCarritoHtml {
+    font-family: "ubuntu"; }
+  .alertCarrito .alertCarritoButton {
+    background-color: #ff5c5c;
+    padding-right: 30px;
+    padding-left: 30px; }
+
+.alertAgregarCarrito {
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white; }
+  .alertAgregarCarrito .alertAgregarCarritoTitle {
+    font-family: "ubuntu"; }
+  .alertAgregarCarrito .alertAgregarCarritoTexto {
+    font-family: "ubuntu"; }
+  .alertAgregarCarrito .alertAgregarCarritoButton {
+    border-radius: 30px;
+    background-color: #ff5c5c;
+    font-weight: 500;
+    color: white;
+    padding-right: 30px;
+    padding-left: 30px; }
+
+.alertAgregarQuitar {
+  width: 100%;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white; }
+  .alertAgregarQuitar .alertQuitarCarritoTitle {
+    font-family: "ubuntu"; }
+  .alertAgregarQuitar .alertQuitarCarritoTexto {
+    font-family: "ubuntu"; }
+  .alertAgregarQuitar .alertQuitarCarritoButton {
+    border-radius: 30px;
+    background-color: #ff5c5c;
+    font-weight: 500;
+    color: white;
+    padding-right: 30px;
+    padding-left: 30px; }
+
 .whatsapp-button {
   display: flex;
   justify-content: center;
