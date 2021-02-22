@@ -58,6 +58,7 @@ header {
   .alertCarrito .alertCarritoHtml {
     font-family: "ubuntu"; }
   .alertCarrito .alertCarritoButton {
+    border-radius: 30px;
     background-color: #ff5c5c;
     padding-right: 30px;
     padding-left: 30px; }
@@ -79,16 +80,16 @@ header {
     padding-right: 30px;
     padding-left: 30px; }
 
-.alertAgregarQuitar {
+.alertQuitarCarrito {
   width: 100%;
   padding-right: 50px;
   padding-left: 50px;
   color: white; }
-  .alertAgregarQuitar .alertQuitarCarritoTitle {
+  .alertQuitarCarrito .alertQuitarCarritoTitle {
     font-family: "ubuntu"; }
-  .alertAgregarQuitar .alertQuitarCarritoTexto {
+  .alertQuitarCarrito .alertQuitarCarritoTexto {
     font-family: "ubuntu"; }
-  .alertAgregarQuitar .alertQuitarCarritoButton {
+  .alertQuitarCarrito .alertQuitarCarritoButton {
     border-radius: 30px;
     background-color: #ff5c5c;
     font-weight: 500;

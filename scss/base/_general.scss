@@ -71,6 +71,7 @@ header{
     font-family: "ubuntu";
   }
   .alertCarritoButton{
+    border-radius: 30px;
     background-color: #ff5c5c;
     padding-right: 30px;
     padding-left: 30px;
@@ -98,7 +99,7 @@ header{
   }
 }
 
-.alertAgregarQuitar{
+.alertQuitarCarrito{
   width: 100%;
   padding-right: 50px;
   padding-left: 50px;

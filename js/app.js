@@ -39,8 +39,6 @@ $(document).ready( function () {
 
 //Carrito de compras
 let carrito = [ ];
-const buttonOrdenar = document.querySelectorAll(".buttonOrder");
-
 
 //Agregar productos al carrito (funciona)
 
@@ -55,18 +53,18 @@ function agregarAlCarritoClick (event) {
 }
 
 function agregarProductoAlCarrito (productoNombre, productoPrecio) {
-  const confirmation = Swal.fire({
-    icon: "success",
-    title:`Has ordenado un`,
-    html: `${productoNombre} por ${productoPrecio}`,
-    confirmButtonText: "Genial",
-    customClass: {
-      container: "alertAgregarCarrito",
-      title:"alertAgregarCarritoTitle",
-      html: "alertAgregarCarritoTexto",
-      confirmButton: "alertAgregarCarritoButton"
-    }
-  });
+const confirmation = Swal.fire({
+  icon: "success",
+  title:`Has ordenado un`,
+  html: `${productoNombre} por ${productoPrecio}`,
+  confirmButtonText: "Genial",
+  customClass: {
+    container: "alertAgregarCarrito",
+    title:"alertAgregarCarritoTitle",
+    html: "alertAgregarCarritoTexto",
+    confirmButton: "alertAgregarCarritoButton"
+  }
+});
 
   if (confirmation) {
     productoPrecio = parseInt(productoPrecio.slice(1))
@@ -93,16 +91,16 @@ function quitarProductoDelCarritoClick (event) {
 function quitarDelCarrito (nombreProducto) {
   const confirmation = Swal.fire({
     icon: "success",
-    title:`Has quitado el`,
-    html: `${productoNombre} de tu orden`,
-    confirmButtonText: "Volver",
+    title: "Has quitado el",
+    html: `${nombreProducto} de tu orden`,
+    confirmButtonText: "Que pena",
     customClass: {
       container: "alertQuitarCarrito",
       title:"alertQuitarCarritoTitle",
       html: "alertQuitarCarritoTexto",
       confirmButton: "alertQuitarCarritoButton"
     }
-  })
+  });
   if (confirmation) {
     carrito = carrito.filter(el => el.nombre != nombreProducto);
   }
