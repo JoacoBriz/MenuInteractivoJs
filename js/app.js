@@ -94,7 +94,7 @@ function quitarDelCarrito (nombreProducto) {
   const confirmation = Swal.fire({
     icon: "success",
     title:`Has quitado el`,
-    html: `${productoNombre} por ${productoPrecio} de tu orden`,
+    html: `${productoNombre} de tu orden`,
     confirmButtonText: "Volver",
     customClass: {
       container: "alertQuitarCarrito",
