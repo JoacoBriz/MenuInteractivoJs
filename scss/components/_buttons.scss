@@ -1,9 +1,11 @@
-.whatsapp-button {
+.instagram-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #00E676;
-  font-size: 30px;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+  font-size: 32px;
   height: 60px;
   width: 60px;
   position: fixed;
@@ -13,10 +15,9 @@
   z-index: 10000;
   text-decoration: none;
   color: #fff;
-  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
 }
 
-.whatsapp-button:hover {
+.instagram-button:focus {
   animation: pulse 1s;
   outline: none;
   text-decoration: none;
@@ -24,17 +25,17 @@
 
 
 
-.instagram-button {
+.carrito-button {
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
   text-decoration: none;
   display: flex;
   outline: none;
-  text-decoration: none;
   justify-content: center;
   align-items: center;
-  background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
-  font-size: 30px;
+  padding-right: 4px;
+  background: #fd5949;
+  border: #f2a22c 4px solid;
+  font-size: 27px;
   height: 60px;
   width: 60px;
   position: fixed;
@@ -43,11 +44,44 @@
   bottom: 20px;
   border-radius: 50%;
   z-index: 10000;
-  color: #fff;
+  color: white;
+  .carrito-cantidad{
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+  text-decoration: none;
+  display: flex;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  padding-right: 4px;
+  background: #f2a22c;
+  border: #fd5949 2px solid;
+  font-size: 27px;
+  height: 25px;
+  width: 25px;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  border-radius: 50%;
+  z-index: 10000;
+  color: white;
+  .carrito-cantidad-numero{
+    font-weight: 700;
+    margin-top: 15px;
+    margin-left: 4px;
+    font-size: 15px;
+    color: black;
+  }
+  }
+  a{
+    outline: none;
+    text-decoration: none;
+    color: white;
+  }
 }
 
-.instagram-button:hover {
+.carrito-button:focus {
   animation: pulse 1s;
   outline: none;
   text-decoration: none;
+  color: white;
 }

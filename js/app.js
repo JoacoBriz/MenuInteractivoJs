@@ -1,5 +1,8 @@
 // Cambio de Boton con jQuery
 $(document).ready( function () {
+
+
+    //Cambio de boton
   $(".buttonOrder").click(function (event) {
     if (this.innerHTML === "Ordenar") {
       agregarAlCarritoClick(event);
@@ -10,35 +13,37 @@ $(document).ready( function () {
     }
   })
 
-  $(".buttonFinal").click( function () {
+  //Boton Carrito
+  $(".carrito-button").click( function () {
     let carritoNames = []
     carrito.forEach(el => carritoNames.push(el.nombre))
+
     Swal.fire({
       icon: "success",
       title: `Tu orden es:`,
-      html: `${carritoNames.join("<br/>")} <br/> <br/> Precio total: $${precioFinal()}`,
-      confirmButtonText: "Volver",
-
-
+      html: `${carritoNames.join("<br/>")} <br/> Precio total: $${precioFinal()}`,
+      confirmButtonText: "Finalizar",
+      showCancelButton: true,
+      showCancelButton: "Volver",
 
       customClass: {
         container: "alertCarrito",
         title: "alertCarritoTitulo",
         html: "alertCarritoHtml",
-        confirmButton: "alertCarritoButton"
+        confirmButton: "alertCarritoButton",
+        showCancelButton: "alertCarritoButtonCancel"
       }
     });
 
-
-    while(carrito.length > 0) {
-      carrito.pop();
-    }
+    //Cantidad del boton carrito
+    
   })
 })
 
 
 //Carrito de compras
 let carrito = [ ];
+console.log(carrito.length);
 
 //Agregar productos al carrito (funciona)
 
@@ -53,29 +58,29 @@ function agregarAlCarritoClick (event) {
 }
 
 function agregarProductoAlCarrito (productoNombre, productoPrecio) {
-const confirmation = Swal.fire({
-  icon: "success",
-  title:`Has ordenado un`,
-  html: `${productoNombre} por ${productoPrecio}`,
-  confirmButtonText: "Genial",
-  customClass: {
-    container: "alertAgregarCarrito",
-    title:"alertAgregarCarritoTitle",
-    html: "alertAgregarCarritoTexto",
-    confirmButton: "alertAgregarCarritoButton"
-  }
-});
+  const confirmation = Swal.fire({
+    icon: "success",
+    title:`Has ordenado un`,
+    html: `${productoNombre} por ${productoPrecio}`,
+    confirmButtonText: "Genial",
+
+    customClass: {
+      container: "alertAgregarCarrito",
+      title:"alertAgregarCarritoTitle",
+      html: "alertAgregarCarritoTexto",
+      confirmButton: "alertAgregarCarritoButton"
+    }
+  });
 
   if (confirmation) {
     productoPrecio = parseInt(productoPrecio.slice(1))
     carrito.push({nombre: productoNombre, precio: productoPrecio});
     precioFinal();
+    console.log(carrito.length);
+    var cantidadSumar = carrito.length;
+    const mostrarCantidad = document.querySelector(".carrito-cantidad-numero").innerHTML = cantidadSumar;
   }
 }
-
-
-
-
 
 // Quitar productos al carrito (Funciona)
 
@@ -94,6 +99,7 @@ function quitarDelCarrito (nombreProducto) {
     title: "Has quitado el",
     html: `${nombreProducto} de tu orden`,
     confirmButtonText: "Que pena",
+
     customClass: {
       container: "alertQuitarCarrito",
       title:"alertQuitarCarritoTitle",
@@ -103,24 +109,17 @@ function quitarDelCarrito (nombreProducto) {
   });
   if (confirmation) {
     carrito = carrito.filter(el => el.nombre != nombreProducto);
+    var cantidadRestar = carrito.length;
+    const mostrarCantidad = document.querySelector(".carrito-cantidad-numero").innerHTML = cantidadRestar;
+
   }
 }
 
-
 //Mostrar Precio final
 function precioFinal () {
-  let total = 0 
+  let total = 0; 
   carrito.forEach(el => total += el.precio);
-  return total
+  return total;
 }
 
-
-
-//Session storage 
-
-window.sessionStorage.setItem("items", JSON.stringify(carrito));
-var storedArray = JSON.parse(sessionStorage.getItem("items"));//no brackets
-var i;
-for (i = 0; i < storedArray.length; i++) {
-  alert(storedArray[i]);
-}
+//Cambiar cantidad de productos
