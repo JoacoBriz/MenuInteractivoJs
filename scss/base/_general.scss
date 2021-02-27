@@ -75,6 +75,10 @@ header{
     background-color: #ff5c5c;
     padding-right: 30px;
     padding-left: 30px;
+    a{
+      color: white;
+      text-decoration: none;
+    }
   }
 }
 
@@ -118,4 +122,22 @@ header{
     padding-right: 30px;
     padding-left: 30px;
   }
+}
+
+
+.headerPago{
+  img.logo{
+    width: 220px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1{
+    font-family: 'Merriweather', serif;
+    font-size: 45px;
+    text-align: center;
+  }
+  margin-top: 0%;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }

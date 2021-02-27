@@ -20,9 +20,9 @@ $(document).ready( function () {
       icon: "success",
       title: `Tu orden es:`,
       html: `${carritoNames.join("<br/>")} <br/> Precio total: $${precioFinal()}`,
-      confirmButtonText: "Finalizar",
+      confirmButtonText: `<a href="../html/pasarelaPago.html"><span>Finalizar</span></a>`,
       showCancelButton: true,
-      showCancelButton: "Volver",
+      showCancelButton: "Volver ",
 
       customClass: {
         container: "alertCarrito",
@@ -34,6 +34,7 @@ $(document).ready( function () {
       })
     while(carrito.length > 0) {
       carrito.pop();
+      $(this).innerHTML("Ordenar");
     }
   });
 });
@@ -41,7 +42,6 @@ $(document).ready( function () {
 
 //Carrito de compras
 let carrito = [ ];
-console.log(carrito.length);
 
 //Agregar productos al carrito (funciona)
 
@@ -118,4 +118,58 @@ carrito.forEach(el => total += el.precio);
 return total;
 }
 
-//Cambiar cantidad de productos
+//Formulario de pago
+$(document).ready(function () {
+  $("input#nombrePago")
+  .keypress(function () {
+    var regex = new RegExp("^[a-zA-Z ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+      event.preventDefault();
+      return false;
+    }
+  });
+
+
+  $("input#tarjetaPago")
+  .keypress(function (event) {
+    if (event.which < 48 || event.which > 57 || this.value.length === 16) {
+      return false;
+    }
+  });
+
+  $("input#dniPago")
+  .keypress(function (event) {
+    if (event.which < 48 || event.which > 57 || this.value.length === 8) {
+      return false;
+    }
+  });
+
+  $("input#codigotarjetaPago")
+  .keypress(function (event) {
+    if (event.which < 48 || event.which > 57 || this.value.length === 3) {
+      return false;
+    }
+  });
+
+  $("#finalizarPagoCarrito").click( function () {
+    if ($('#input#nombrePago').text() == "" || $('#input#tarjetaPago').text() == "" || $('#input#dniPago').text() == "" || $('#input#codigotarjetaPago').text() == "") {
+      Swal.fire({
+        icon: "error",
+        title: "Completa los Datos",
+        timer: 2000,
+        timerProgressBar: true,
+        showConfirmButton: false
+        });
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Pago Exitoso",
+        timer: 2000,
+        timerProgressBar: true,
+        confirmButton: false
+        });
+    }
+
+  });
+});
