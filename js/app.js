@@ -34,7 +34,6 @@ $(document).ready( function () {
       })
     while(carrito.length > 0) {
       carrito.pop();
-      $(this).innerHTML("Ordenar");
     }
   });
 });
@@ -124,23 +123,15 @@ $(document).ready(function () {
   .keypress(function () {
     var regex = new RegExp("^[a-zA-Z ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
+    if (!regex.test(key) || this.value.length === 25) {
       event.preventDefault();
       return false;
     }
   });
 
-
   $("input#tarjetaPago")
   .keypress(function (event) {
     if (event.which < 48 || event.which > 57 || this.value.length === 16) {
-      return false;
-    }
-  });
-
-  $("input#dniPago")
-  .keypress(function (event) {
-    if (event.which < 48 || event.which > 57 || this.value.length === 8) {
       return false;
     }
   });
@@ -152,24 +143,41 @@ $(document).ready(function () {
     }
   });
 
-  $("#finalizarPagoCarrito").click( function () {
-    if ($('#input#nombrePago').text() == "" || $('#input#tarjetaPago').text() == "" || $('#input#dniPago').text() == "" || $('#input#codigotarjetaPago').text() == "") {
+  $("input#dniPago")
+  .keypress(function (event) {
+    if (event.which < 48 || event.which > 57 || this.value.length === 8) {
+      return false;
+    }
+  });
+
+
+  $("#formPagoCarrito").submit(function () {
+    let nombre = $("input#nombrePago").val().trim();
+    let numTarjeta = $("input#tarjetaPago").val().trim();
+    let codigo = $("input#codigotarjetaPago").val().trim();
+    let fechaVencimiento = $("input#vencimientotarjetaPago").val().trim();
+    let dni = $("input#dniPago").val().trim();
+
+    if (nombre === "" || numTarjeta === "" || codigo === "" || fechaVencimiento === "" || dni === "" ) {
       Swal.fire({
         icon: "error",
-        title: "Completa los Datos",
-        timer: 2000,
+        title:`Faltan datos`,
+        text: "Compruebe que todos los campos esten completos",
+        showConfirmButton: false,
+        timer: 3000,
         timerProgressBar: true,
-        showConfirmButton: false
-        });
+      });
+      return false;
     } else {
       Swal.fire({
         icon: "success",
-        title: "Pago Exitoso",
+        title:`Pago Exitoso`,
+        text: "Que disfrute su comida!",
+        showConfirmButton: false,
         timer: 2000,
         timerProgressBar: true,
-        confirmButton: false
-        });
+      });
+      return true;
     }
-
   });
 });
