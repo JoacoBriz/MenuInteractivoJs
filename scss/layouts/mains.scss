@@ -182,3 +182,39 @@
     }
   }
 }
+
+.alertCarrito{
+  .alertCarritoButton{
+    background-color: #ff5c5c;
+    border-radius: 30px;
+    outline: none;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+
+
+.alertQuitarCarrito{
+  .alertQuitarCarritoButton{
+    background-color: #ff5c5c;
+    border-radius: 30px;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+.finalizarPagoForm{
+  .finalizarPagoButton{
+    background-color: #ff5c5c;
+    border-radius: 30px;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}

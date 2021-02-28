@@ -344,3 +344,25 @@ header {
         color: white;
         font-weight: 600;
         letter-spacing: 2px; }
+
+.alertCarrito .alertCarritoButton {
+  background-color: #ff5c5c;
+  border-radius: 30px;
+  outline: none; }
+  .alertCarrito .alertCarritoButton a {
+    text-decoration: none;
+    color: white; }
+
+.alertQuitarCarrito .alertQuitarCarritoButton {
+  background-color: #ff5c5c;
+  border-radius: 30px; }
+  .alertQuitarCarrito .alertQuitarCarritoButton a {
+    text-decoration: none;
+    color: white; }
+
+.finalizarPagoForm .finalizarPagoButton {
+  background-color: #ff5c5c;
+  border-radius: 30px; }
+  .finalizarPagoForm .finalizarPagoButton a {
+    text-decoration: none;
+    color: white; }

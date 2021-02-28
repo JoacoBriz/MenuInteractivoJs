@@ -22,14 +22,14 @@ $(document).ready( function () {
       html: `${carritoNames.join("<br/>")} <br/> Precio total: $${precioFinal()}`,
       confirmButtonText: `<a href="../html/pasarelaPago.html"><span>Finalizar</span></a>`,
       showCancelButton: true,
-      showCancelButton: "Volver ",
+      cancelButtonText: "Volver",
 
       customClass: {
         container: "alertCarrito",
         title: "alertCarritoTitulo",
         html: "alertCarritoHtml",
         confirmButton: "alertCarritoButton",
-        showCancelButton: "alertCarritoButtonCancel"
+        cancelButtonText: "alertCarritoButtonCancel"
       }
       })
     while(carrito.length > 0) {
@@ -151,12 +151,14 @@ $(document).ready(function () {
   });
 
 
-  $("#formPagoCarrito").submit(function () {
+  $("#formPagoCarrito").submit(function (event) {
     let nombre = $("input#nombrePago").val().trim();
     let numTarjeta = $("input#tarjetaPago").val().trim();
     let codigo = $("input#codigotarjetaPago").val().trim();
     let fechaVencimiento = $("input#vencimientotarjetaPago").val().trim();
     let dni = $("input#dniPago").val().trim();
+
+    event.preventDefault();
 
     if (nombre === "" || numTarjeta === "" || codigo === "" || fechaVencimiento === "" || dni === "" ) {
       Swal.fire({
@@ -173,11 +175,16 @@ $(document).ready(function () {
         icon: "success",
         title:`Pago Exitoso`,
         text: "Que disfrute su comida!",
-        showConfirmButton: false,
-        timer: 2000,
+        showConfirmButton: true,
+        confirmButtonText: `<a href="../index.html"><span>Finalizar</span></a>`,
+        timer: 5000,
         timerProgressBar: true,
+
+        customClass: {
+          container: "finalizarPagoForm",
+          confirmButton: "finalizarPagoButton"
+        }
       });
-      return true;
     }
   });
 });
