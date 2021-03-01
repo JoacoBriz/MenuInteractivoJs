@@ -21,5 +21,8 @@
     "url": "https://github.com/JoacoBriz/proyectoFinalJavascript/issues"
   },
   "homepage": "https://github.com/JoacoBriz/proyectoFinalJavascript#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "emailjs-com": "^2.6.4"
+  }
 }

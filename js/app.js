@@ -14,7 +14,7 @@ $(document).ready( function () {
   //Boton Carrito
   $(".carrito-button").click( function () {
     let carritoNames = []
-    carrito.forEach(el => carritoNames.push(el.nombre))
+    carritoGuardado.forEach(el => carritoNames.push(el.nombre))
 
     Swal.fire({
       icon: "success",
@@ -32,15 +32,18 @@ $(document).ready( function () {
         cancelButtonText: "alertCarritoButtonCancel"
       }
       })
-    while(carrito.length > 0) {
-      carrito.pop();
-    }
   });
 });
 
 
 //Carrito de compras
 let carrito = [ ];
+
+//Local storage
+// Lo guardas con
+localStorage.setItem("carrito", JSON.stringify(carrito));
+// Luego lo obtienes con
+const carritoGuardado = JSON.parse(localStorage.getItem("carrito"));
 
 //Agregar productos al carrito (funciona)
 
