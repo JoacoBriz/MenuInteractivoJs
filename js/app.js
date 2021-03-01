@@ -17,7 +17,7 @@ $(document).ready(function () {
           icon: 'success',
           title: `Tu orden es:`,
           html: `${carritoNames.join(
-              '<br/>'
+            '<br/>'
           )} <br/> Precio total: $${precioFinal()}`,
           confirmButtonText: `<a href="../html/pasarelaPago.html"><span>Finalizar</span></a>`,
           showCancelButton: true,
