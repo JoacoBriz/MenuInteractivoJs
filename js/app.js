@@ -1,138 +1,128 @@
-$(document).ready(function () {
-  $('.buttonOrder').click(function (event) {
-      if (this.innerHTML === 'Ordenar') {
-          agregarAlCarritoClick(event);
-          this.innerHTML = 'Cancelar';
-      } else {
-          this.innerHTML = 'Ordenar';
-          quitarProductoDelCarritoClick(event);
-      }
+$( document ).ready( function () {
+  $(".buttonOrder").click( function (event) {
+    if (this.innerHTML = "Ordenar") {
+      agregarAlCarritoClick(event);
+      this.innerHTML = "Cancelar";
+    } else {
+      this.innerHTML = "Ordenar";
+      quitarProductoDelCarritoClick(event);
+    }
   });
 
-  $('.carrito-button').click(function () {
-      let carritoNames = [];
-      carrito.forEach((el) => carritoNames.push(el.nombre));
-
-      Swal.fire({
-          icon: 'success',
-          title: `Tu orden es:`,
-          html: `${carritoNames.join(
-            '<br/>'
-          )} <br/> Precio total: $${precioFinal()}`,
-          confirmButtonText: `<a href="../html/pasarelaPago.html"><span>Finalizar</span></a>`,
-          showCancelButton: true,
-          cancelButtonText: 'Volver',
-
-          customClass: {
-              container: 'alertCarrito',
-              title: 'alertCarritoTitulo',
-              html: 'alertCarritoHtml',
-              confirmButton: 'alertCarritoButton',
-              cancelButtonText: 'alertCarritoButtonCancel'
-          }
-      });
+  $(".carrito-button").click(function () {
+    let carritoNames = [];
+    carrito.forEach((el) => carritoNames.push(el.nombre));
+    
+    Swal.fire({
+      icon: "success",
+      title: "Tu orden es",
+      html: `${carritoNames.join("<br/>")} <br/> Precio Total: $${precioFinal()}`,
+      confirmButtonText: `<a href="../html/pasarelaPago.html><span>Finalizar</span></a>`,
+      showCancelButton: true,
+      cancelButtonText: 'Volver',
+      
+      customClass: {
+        container: 'alertCarrito',
+        title: 'alertCarritoTitulo',
+        html: 'alertCarritoHtml',
+        confirmButton: 'alertCarritoButton',
+        cancelButtonText: 'alertCarritoButtonCancel'
+      }
+    });
   });
 });
 
-let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-document.querySelector('.carrito-cantidad-numero').innerHTML = carrito.length;
+//Local storage - carrito
 
+let carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+$(".carrito-cantidad-numero").innerHTML = carrito.length;
 
 function setearTextoDeBotones() {
-  const productos = Array.from(document.querySelectorAll('.nombreProducto'));
-  productos.filter(({ textContent }) => 
-      carrito.some(({ nombre }) => textContent === nombre
-  )).forEach((elem) => {
-      elem.parentNode.querySelector('.buttonOrder').innerHTML = "Cancelar";
+  const productos = Array.from(document.querySelectorAll(".nombreProducto"));
+  productos.filter(({ textContent }) => carrito.some(({ nombre }) => textContent === nombre )).forEach((elem) => { elem.parentNode.querySelector(".buttonOrder").innerHTML = "Cancelar";
   });
-}
+};
+
 
 setearTextoDeBotones();
 
 function actualizarCarritoLocalStorage() {
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-}
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+};
 
+
+//Agregar al carrito 
 function agregarProductoAlCarrito(productoNombre, productoPrecio) {
   const confirmation = Swal.fire({
-      icon: 'success',
+      icon: "success",
       title: `Has ordenado un`,
       html: `${productoNombre} por ${productoPrecio}`,
-      confirmButtonText: 'Genial',
+      confirmButtonText: "Genial",
 
       customClass: {
-          container: 'alertAgregarCarrito',
-          title: 'alertAgregarCarritoTitle',
-          html: 'alertAgregarCarritoTexto',
-          confirmButton: 'alertAgregarCarritoButton'
+          container: "alertAgregarCarrito",
+          title: "alertAgregarCarritoTitle",
+          html: "alertAgregarCarritoTexto",
+          confirmButton: "alertAgregarCarritoButton"
       }
   });
-
   if (confirmation) {
-      productoPrecio = parseInt(productoPrecio.slice(1));
-      carrito.push({ nombre: productoNombre, precio: productoPrecio });
-      precioFinal();
-      const cantidadSumar = carrito.length;
-      document.querySelector(
-          '.carrito-cantidad-numero'
-      ).innerHTML = cantidadSumar;
+    productoPrecio = parseInt(productoPrecio.slice(1));
+    carrito.push({ nombre: productoNombre, precio: productoPrecio });
+    precioFinal();
+    const cantidadSumar = carrito.length;
+    document.querySelector(".carrito-cantidad-numero").innerHTML = cantidadSumar;
   }
-}
+};
 
 function agregarAlCarritoClick(event) {
   const button = event.target;
   const item = button.closest('.productoGlobal');
 
   const productoNombre = item.querySelector('.nombreProducto').textContent;
-  const productoPrecio = item.querySelector('.precioProducto').textContent; // Este esta devolviendo en texto
+  const productoPrecio = item.querySelector('.precioProducto').textContent;
 
   agregarProductoAlCarrito(productoNombre, productoPrecio);
   actualizarCarritoLocalStorage();
 }
 
+//Quitar del carrito
 function quitarDelCarrito(nombreProducto) {
   const confirmation = Swal.fire({
-      icon: 'success',
-      title: 'Has quitado el',
+      icon: "success",
+      title: "Has quitado el",
       html: `${nombreProducto} de tu orden`,
-      confirmButtonText: 'Que pena',
+      confirmButtonText: "Que pena",
 
       customClass: {
-          container: 'alertQuitarCarrito',
-          title: 'alertQuitarCarritoTitle',
-          html: 'alertQuitarCarritoTexto',
-          confirmButton: 'alertQuitarCarritoButton'
+          container: "alertQuitarCarrito",
+          title: "alertQuitarCarritoTitle",
+          html: "alertQuitarCarritoTitle",
+          confirmButton: "alertQuitarCarritoButton"
       }
   });
 
   if (confirmation) {
       carrito = carrito.filter((el) => el.nombre != nombreProducto);
       var cantidadRestar = carrito.length;
-      document.querySelector(
-          '.carrito-cantidad-numero'
-      ).innerHTML = cantidadRestar;
+      document.querySelector(".carrito-cantidad-numero").innerHTML = cantidadRestar;
   }
-}
+};
 
-function quitarProductoDelCarritoClick(event) {
-  const button = event.target;
-  const item = button.closest('.productoGlobal');
-
-  const nombreProducto = item.querySelector('.nombreProducto').textContent;
-
-  quitarDelCarrito(nombreProducto);
-  actualizarCarritoLocalStorage();
-}
-
+//Precio Final
 
 function precioFinal() {
   let total = 0;
   carrito.forEach((el) => (total += el.precio));
 
   return total;
-}
+};
 
-//Formulario de pago
+
+
+
+
+//Formulario de pago Validacion
 $(document).ready(function () {
   $('input#nombrePago').keypress(function () {
       var regex = new RegExp('^[a-zA-Z ]+$');
@@ -172,17 +162,11 @@ $(document).ready(function () {
 
       event.preventDefault();
 
-      if (
-          nombre === '' ||
-          numTarjeta === '' ||
-          codigo === '' ||
-          fechaVencimiento === '' ||
-          dni === ''
-      ) {
+      if (nombre === '' || numTarjeta === '' || codigo === '' || fechaVencimiento === '' || dni === '') {
           Swal.fire({
-              icon: 'error',
-              title: `Faltan datos`,
-              text: 'Compruebe que todos los campos esten completos',
+              icon: "error",
+              title: "Faltan datos",
+              text: "Compruebe que todos los campos esten completos",
               showConfirmButton: false,
               timer: 3000,
               timerProgressBar: true
@@ -190,17 +174,17 @@ $(document).ready(function () {
           return false;
       } else {
           Swal.fire({
-              icon: 'success',
-              title: `Pago Exitoso`,
-              text: 'Que disfrute su comida!',
+              icon: "success",
+              title: "Pago Exitoso",
+              text: "Que disfrute su comida!",
               showConfirmButton: true,
               confirmButtonText: `<a href="../index.html"><span>Finalizar</span></a>`,
               timer: 5000,
               timerProgressBar: true,
 
               customClass: {
-                  container: 'finalizarPagoForm',
-                  confirmButton: 'finalizarPagoButton'
+                  container: "finalizarPagoForm",
+                  confirmButton: "finalizarPagoButton"
               }
           });
       }
