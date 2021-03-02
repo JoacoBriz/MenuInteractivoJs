@@ -205,3 +205,27 @@ $(document).ready(function () {
     }
   });
 });
+
+
+
+
+
+
+//Dolar de AJAX
+$.ajax({
+    url: "https://www.dolarsi.com/api/api.php?type=valoresprincipales",
+    dataType: "json",
+    success: function(valor, estado) {
+      // console.log("valor", valor);
+
+
+      //Valor del dolar COMPRA
+      let cotizacionHoyCompra = valor[0].casa["compra"];
+      let dolarCompra = $("#compraValorUsd").html("<span>Compra: </span>" + cotizacionHoyCompra);
+      console.log(dolarCompra);
+      //Valor del dolar VENTA
+      let cotizacionHoyVenta = valor[0].casa["venta"];
+      let dolarVenta = $("#ventaValorUsd").html("<span>Venta: </span>" + cotizacionHoyVenta);
+      console.log(dolarVenta);
+    }
+});
