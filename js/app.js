@@ -11,6 +11,9 @@ $(document).ready( function () {
     }
   })
 
+
+
+
   //Boton Carrito
   $(".carrito-button").click( function () {
     let carritoNames = []
@@ -39,15 +42,16 @@ $(document).ready( function () {
 });
 
 
-//Carrito de compras
+
+
+//Carrito de compras - LocalStorage
 let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
 $('.carrito-cantidad-numero').innerHTML = carrito.length;
 
 function setearTextoDeBotones() {
     const productos = Array.from(document.querySelectorAll('.nombreProducto'));
     productos.filter(({ textContent }) => 
-        carrito.some(({ nombre }) => textContent === nombre
-    )).forEach((elem) => {
+        carrito.some(({ nombre }) => textContent === nombre)).forEach((elem) => {
         elem.parentNode.querySelector('.buttonOrder').innerHTML = "Cancelar";
     });
 };
@@ -58,14 +62,16 @@ function actualizarCarritoLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-//Agregar productos al carrito (funciona)
 
+
+
+//Agregar productos al carrito
 function agregarAlCarritoClick (event) {
 const button =event.target;
 const item = button.closest(".productoGlobal");
 
 const productoNombre = item.querySelector(".nombreProducto").textContent;
-const productoPrecio = item.querySelector(".precioProducto").textContent; // Este esta devolviendo en texto
+const productoPrecio = item.querySelector(".precioProducto").textContent;
 
 agregarProductoAlCarrito(productoNombre,productoPrecio);
 actualizarCarritoLocalStorage();
@@ -95,8 +101,10 @@ if (confirmation) {
 }
 }
 
-// Quitar productos al carrito (Funciona)
 
+
+
+// Quitar productos al carrito
 function quitarProductoDelCarritoClick (event) {
 const button =event.target;
 const item = button.closest(".productoGlobal");
@@ -127,6 +135,9 @@ if (confirmation) {
 }
 }
 
+
+
+
 //Mostrar Precio final
 function precioFinal () {
 let total = 0; 
@@ -134,7 +145,10 @@ carrito.forEach(el => total += el.precio);
 return total;
 }
 
-//Formulario de pago
+
+
+
+//Formulario de pago-Validación
 $(document).ready(function () {
   $("input#nombrePago")
   .keypress(function () {
@@ -188,6 +202,7 @@ $(document).ready(function () {
       });
       return false;
     } else {
+      localStorage.clear();
       Swal.fire({
         icon: "success",
         title:`Pago Exitoso`,
